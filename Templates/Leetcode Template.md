@@ -8,10 +8,12 @@ url:
 
 ### Example 1:
 ```
+
 ```
 
 ### Example 2:
 ```
+
 ```
 
 ### Constraints:
@@ -22,5 +24,10 @@ url:
 
 ### C++
 ```cpp
+
+```
+
+### Python
+```python
 
 ```
