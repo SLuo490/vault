@@ -24,10 +24,14 @@ url:
 
 ### C++
 ```cpp
+class Solution {
+public:
 
+};
 ```
 
 ### Python
 ```python
+class Solution:
 
 ```
