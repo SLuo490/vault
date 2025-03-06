@@ -4,7 +4,7 @@ Difficulty:
 url:
 ---
 ## Description
----
+
 
 ### Example 1:
 ```
@@ -20,7 +20,7 @@ url:
 
 
 ## Solutions
----
+
 
 ### C++
 ```cpp
