@@ -21,17 +21,13 @@ url:
 
 ## Solutions
 
-
-### C++
+### Solution 1: 
+#### C++
 ```cpp
-class Solution {
-public:
 
-};
 ```
 
-### Python
+#### Python
 ```python
-class Solution:
 
 ```
