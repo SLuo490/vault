@@ -76,7 +76,18 @@ The space complexity would be `O(1)` as we are sorting in place without using an
 
 ## Exercises
 
-### 2.1-1
-Illustrate the operation of INSERTION-SORT on an array initially containing the sequence `{31, 41, 59, 26, 41, 59}`
-
+1) Illustrate the operation of INSERTION-SORT on an array initially containing the sequence `{31, 41, 59, 26, 41, 59}`
 ![[2.1-1 Insertion Sort]]
+
+2) Rewrite the Insertion-Sort procedure to sort into monotonically decreasing instead of monotonically increasing order
+```
+Insertion-Sort-Decreasing(A, n)
+	for i = 2 to n
+		key = A[i]
+		// Insert A[i] into the sorted subarray A[1:i - 1]
+		j = i - 1
+		while j > 0 && A[j] < key // "<" makes it sort in decreasing order
+			A[j + 1] = A[j]
+			j = j - 1
+		A[j + 1] = key
+```
