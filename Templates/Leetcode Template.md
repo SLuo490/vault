@@ -22,6 +22,9 @@ url:
 ## Solutions
 
 ### Solution 1: 
+
+**Time Complexity**:
+**Space Complexity**:
 #### C++
 ```cpp
 
