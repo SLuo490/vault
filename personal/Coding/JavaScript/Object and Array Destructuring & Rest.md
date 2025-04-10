@@ -1,3 +1,11 @@
+- [[#What is Destructuring?|What is Destructuring?]]
+	- [[#What is Destructuring?#Why use it?|Why use it?]]
+- [[#Key Features & Uses:|Key Features & Uses:]]
+	- [[#Key Features & Uses:#**Object Destructuring**:|**Object Destructuring**:]]
+	- [[#Key Features & Uses:#**Array Destructuring:**|**Array Destructuring:**]]
+	- [[#Key Features & Uses:#**Destructuring in Function Parameters:** (Very powerful!)|**Destructuring in Function Parameters:** (Very powerful!)]]
+- [[#Rest Syntax (`...`)|Rest Syntax (`...`)]]
+
 ## What is Destructuring?
 - Destructuring is an ES6 feature that provides a concise way to **extract multiple values** from **objects** and **arrays** and assign them directly into variables
 

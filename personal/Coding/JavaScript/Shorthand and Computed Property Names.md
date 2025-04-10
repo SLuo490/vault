@@ -1,3 +1,7 @@
+- [[#Shorthand Properties|Shorthand Properties]]
+	- [[#Shorthand Properties#Shorthand Method Names|Shorthand Method Names]]
+- [[#Computed Property Names|Computed Property Names]]
+
 ## Shorthand Properties
 With shorthand properties, whenever you have a variable which is the **same name** as a property on an object, you can omit the property name when constructing the object.
 

@@ -1,3 +1,8 @@
+- [[#Declaration vs. Initialization:|Declaration vs. Initialization:]]
+- [[#Scope (Where variables are accessible):|Scope (Where variables are accessible):]]
+- [[#Hoisting:|Hoisting:]]
+- [[#Key Differences & When to Use:|Key Differences & When to Use:]]
+	- [[#Key Differences & When to Use:#General Recommendations:|General Recommendations:]]
 ## Declaration vs. Initialization:
 - **Declaration**: Introducing a variable name (e.g. `var myVar;`). It gets the default value `undefined`
 
