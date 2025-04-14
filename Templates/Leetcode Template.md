@@ -29,8 +29,3 @@ url:
 ```cpp
 
 ```
-
-#### Python
-```python
-
-```
