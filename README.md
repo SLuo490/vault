@@ -1,6 +1,6 @@
 # Obsidian vault
 
-## [[personal/index|Personal Vault]]
+## [[01 - personal/index|Personal Vault]]
 - Contains notes for personal studies (Coding, Books, Etc.)
-## [[Work/index|Work]]
+## [[02 - work/index|Work]]
 - Contains notes for work
