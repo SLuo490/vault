@@ -24,11 +24,10 @@ var add = function (x, y) {
   return x + y;
 };
 ```
-
 ## Arrow Function
 Now to change the function expression to an arrow function:
 
-```js
+```js info:2
 var add = function (x, y) {
   return x + y;
 };
