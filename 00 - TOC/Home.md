@@ -1,68 +1,85 @@
 ---
 banner: "https://motionbgs.com/media/2404/house-on-island-spirited-away.jpg"
-banner_y: 0.56629
+banner_y: 0.58629
 cssclasses:
   - hide_properties
   - wide-page
 obsidianUIMode: preview
 ---
-# 🏠 Home Page
-
-<br>
-
 ```dataviewjs
-// Create a container div for the clock widget
-const clockDiv = this.container.createDiv({ cls: "clock-widget" });
+// --- Configuration ---
+const headingText = "🏠 Home Page";
+// Using a div but styling it like a heading
+const headingFontSize = "2em"; // Adjust to match desired heading size (e.g., h1 size)
+const headingFontWeight = "bold"; // Or "normal", "600", etc.
+// --- End Configuration ---
 
-// Inject HTML structure after the container is created
-clockDiv.innerHTML = `
-  <div style="text-align: center;">
-      <h1 id="clock-time" style="font-size: 3em; margin: 0;">Loading...</h1>
-      <p id="clock-date" style="margin: 0; color: grey;">Loading...</p>
-  </div>
-`;
+// 1. Create the main container with Flexbox
+const mainContainer = this.container.createDiv({
+    cls: "heading-clock-container",
+    attr: {
+        style: `
+            display: flex; 
+            align-items: center; /* Vertically center the items' boxes */
+            justify-content: space-between; /* Push heading left, clock right */
+            margin-bottom: 1em; 
+            margin-top: 1em;
+            flex-wrap: wrap; 
+            position: relative; /* Add this for z-index context */
+            z-index: 10;        /* Add this to ensure it's above banner */
+        `
+    }
+});
 
-// Cache the clock and date elements outside the update function for performance
-const clockElement = clockDiv.querySelector("#clock-time");
-const dateElement = clockDiv.querySelector("#clock-date");
+// 2. Create the Heading element ** AS A DIV ** and apply styles
+mainContainer.createEl('div', { // *** Using 'div' ***
+    text: headingText,
+    attr: { 
+        style: `
+            margin: 0; /* Reset margin */
+            padding: 0; /* Reset padding */
+            font-size: ${headingFontSize}; 
+            font-weight: ${headingFontWeight};
+            line-height: 1.2; /* Adjust if necessary */
+        ` 
+    }
+});
 
-// JavaScript function to update the clock and date
+// 3. Create the Clock container element
+const clockContainer = mainContainer.createDiv({
+    cls: "clock-widget",
+    attr: { 
+        style: "text-align: right;" 
+    }
+});
+
+// 4. Inject Clock's HTML Structure 
+clockContainer.innerHTML = `
+    <div id="clock-time" style="font-size: 1.4em; margin: 0; line-height: 1;">Loading...</div>
+    <div id="clock-date" style="margin: 0; color: white; font-size: 0.85em; line-height: 1;">Loading...</div>
+`; 
+
+// 5. Cache Clock Elements
+const clockTimeElement = clockContainer.querySelector("#clock-time");
+const clockDateElement = clockContainer.querySelector("#clock-date");
+
+// 6. Update Clock Function 
 function updateClock() {
-  const now = new Date();
-  
-  // Specify options to include AM/PM in the time format
-  let timeString = now.toLocaleTimeString([], {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: true // This ensures AM/PM is included
-  });
-  
-  // Force AM/PM to be uppercase
-  timeString = timeString.toUpperCase();
-
-  // Manually format the date as DD/MM/YYYY
-  const day = String(now.getDate()).padStart(2, '0'); // Ensure two digits
-  const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
-  const year = now.getFullYear();
-  const dateString = `${month}/${day}/${year}`; // Format the date
-  
-  // Update the content of the clock and date directly
-  if (clockElement) {
-    clockElement.textContent = timeString;
-  }
-  if (dateElement) {
-    dateElement.textContent = dateString;
-  }
-
-  // Schedule the next update
-  requestAnimationFrame(updateClock);
+    const now = new Date();
+    //Include seconds in time
+    let timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }).toUpperCase();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0'); 
+    const year = now.getFullYear();
+    const dateString = `${month}/${day}/${year}`;
+    if (clockTimeElement) clockTimeElement.textContent = timeString;
+    if (clockDateElement) clockDateElement.textContent = dateString;
+    requestAnimationFrame(updateClock);
 }
 
-// Start updating the clock
+// 7. Start the clock
 updateClock();
 ```
-
 <br>
 
 > [!multi-column]
